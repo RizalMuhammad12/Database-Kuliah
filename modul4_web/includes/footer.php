@@ -3,7 +3,7 @@
 ?>
   </main>
   <footer class="footer">
-    <p>© <?=date("Y")?> - Sistem CRUD Modul4</p>
+    <p>© <?=date("Y")?> - Database Kuliah</p>
   </footer>
 </body>
 </html>

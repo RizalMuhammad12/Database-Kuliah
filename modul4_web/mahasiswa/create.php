@@ -15,7 +15,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         $error = $stmt->error;
     }
 }
-$prodiRes = $mysqli->query("SELECT ID_Prodi, Nama_Prodi FROM prodi");
+$prodiRes = $koneksi->query("SELECT ID_Prodi, Nama_Prodi FROM prodi");
 include '../includes/header.php';
 ?>
 <div class="card">

@@ -1,4 +1,6 @@
 <?php
+$current = 'database'; 
+$base_path = '../'; // Perlu naik satu folder untuk menuju root
 require '../config.php';
 include '../includes/header.php';
 ?>

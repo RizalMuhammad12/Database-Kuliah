@@ -1,5 +1,7 @@
 <?php
 // index.php
+$current = 'index'; 
+$base_path = ''; // Tidak perlu naik folder
 require 'config.php';
 include 'includes/header.php';
 

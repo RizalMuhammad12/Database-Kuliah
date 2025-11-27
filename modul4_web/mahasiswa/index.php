@@ -8,7 +8,7 @@ $res = $koneksi->query("SELECT m.NIM, m.Nama_Mahasiswa, m.ID_Prodi, p.Nama_Prodi
     ORDER BY m.NIM ASC");
 ?>
 <div class="card">
-  <h2>Daftar Mahasiswa <a href="create.php" class="btn-primary" style="float:right">Tambah</a></h2>
+  <h2>Daftar Mahasiswa <a href="create.php" class="btn-primary">Tambah</a></h2>
   <table class="table">
     <thead><tr><th>NIM</th><th>Nama</th><th>Program</th><th>Aksi</th></tr></thead>
     <tbody>

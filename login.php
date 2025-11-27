@@ -210,7 +210,7 @@
             
             <p class="separator">Atau gunakan email dan password</p>
             
-            <form action="proses_login.php" method="POST" class="login-form">
+            <form action="modul4_web/index.php" method="POST" class="login-form">
                 <input type="email" name="email" placeholder="Email" class="input-field" required>
                 <input type="password" name="password" placeholder="Password" class="input-field" required>
                 

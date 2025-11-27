@@ -3,6 +3,7 @@ include '../config.php';
 $result = mysqli_query($koneksi, "SELECT * FROM matakuliah");
 ?>
 
+<head><link rel="stylesheet" href="../css/style.css"></head>
 <h2>Data Matakuliah</h2>
 <a href="create.php">Tambah Matakuliah</a>
 <br><br>

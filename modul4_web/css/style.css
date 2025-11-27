@@ -93,136 +93,182 @@ input[type="text"],select{width:100%;padding:8px;border-radius:6px;border:1px so
 .btn-primary{background:var(--primary);color:#fff;padding:8px 12px;border-radius:8px;text-decoration:none;border:none;cursor:pointer}
 .footer{padding:14px;text-align:center;color:var(--muted);font-size:14px;margin-top:30px}
 @media(max-width:700px){.nav{flex-direction:column;align-items:flex-start}.dashboard-stats{flex-direction:column}}
-
-/* ====== RESET ====== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
-/* ====== WRAPPER ====== */
-.container {
-    width: 90%;
-    margin: 30px auto;
-}
-
-h1 {
-    margin-bottom: 20px;
-    text-align: center;
+/* ==================================== */
+/* 1. Global & Reset Styling */
+/* ==================================== */
+body {
+    font-family: 'Ubuntu', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Menggunakan font Ubuntu yang Anda link */
+    background-color: #f4f7f6; /* Latar belakang abu-abu muda */
     color: #333;
+    line-height: 1.6;
+    margin: 0;
 }
 
-/* ====== TABEL ====== */
-table {
+h2 {
+    color: #007bff; /* Warna biru cerah untuk judul */
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ==================================== */
+/* 2. Header (Topbar) Styling */
+/* ==================================== */
+.topbar {
+    background-color: #1a73e8; /* Biru Profesional */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px;
+}
+
+.nav-brand {
+    color: white !important;
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.nav-brand:hover {
+    color: #e9ecef !important;
+}
+
+.nav-links {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-links a.btn {
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    border: none;
+}
+
+.nav-links a.btn:hover:not(.active) {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.nav-links a.btn.active {
+    background-color: #004d9c;
+    font-weight: 700;
+}
+
+/* ==================================== */
+/* 3. Main Content Container */
+/* ==================================== */
+.container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px; /* Jarak jika ada lebih dari satu card */
+}
+
+/* ==================================== */
+/* 4. Table Styling (Untuk Mahasiswa, Dosen, dll.) */
+/* ==================================== */
+.table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 15px;
-    background: #fff;
-    border-radius: 8px;
-    overflow: hidden;
 }
 
-table thead {
-    background: #4CAF50;
-    color: white;
-}
-
-table th, table td {
+.table th, .table td {
     padding: 12px 15px;
-    border-bottom: 1px solid #ddd;
     text-align: left;
+    border-bottom: 1px solid #ddd;
 }
 
-table tr:hover {
-    background: #f3f3f3;
-}
-
-/* ====== BUTTON ====== */
-.btn {
-    display: inline-block;
-    padding: 8px 14px;
-    margin: 4px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 14px;
-}
-
-.btn-add {
-    background: #4CAF50;
+/* Header Tabel */
+.table thead th {
+    background-color: #007bff;
     color: white;
+    font-weight: 600;
+    text-transform: uppercase;
 }
 
-.btn-edit {
-    background: #2196F3;
-    color: white;
+/* Zebra Striping */
+.table tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
 }
 
-.btn-delete {
-    background: #f44336;
-    color: white;
-}
-
-.btn:hover {
-    opacity: 0.85;
-}
-
-/* ====== FORM ====== */
-form {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    width: 60%;
-    margin: 30px auto;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-label {
-    display: block;
-    margin-bottom: 6px;
-    color: #333;
-}
-
-input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    border-radius: 6px;
-    border: 1px solid #aaa;
-    margin-bottom: 15px;
-}
-
-input[type="submit"] {
-    width: 100%;
-    padding: 10px;
-    background: #4CAF50;
-    border: none;
-    color: white;
-    border-radius: 6px;
+.table tbody tr:hover {
+    background-color: #e9ecef;
     cursor: pointer;
 }
 
-input[type="submit"]:hover {
-    opacity: 0.9;
-}
-
-/* ====== NAVBAR SEDERHANA ====== */
-.navbar {
-    background: #333;
-    padding: 12px;
-    text-align: center;
-}
-
-.navbar a {
+/* ==================================== */
+/* 5. Button/Action Styling */
+/* ==================================== */
+/* Tombol 'Tambah' */
+.btn-primary {
+    background-color: #28a745; /* Hijau untuk Tambah */
     color: white;
+    padding: 10px 20px;
     text-decoration: none;
-    margin: 0 12px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
 }
 
-.navbar a:hover {
-    text-decoration: underline;
+.btn-primary:hover {
+    background-color: #218838;
 }
 
+/* Kolom Aksi (Edit/Hapus) */
+.actions a {
+    text-decoration: none;
+    margin-right: 10px;
+    padding: 5px 8px;
+    border-radius: 3px;
+    font-size: 0.9em;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
 
+/* Tombol Aksi Edit */
+.actions a:first-child { 
+    color: #007bff;
+    border: 1px solid #007bff;
+}
 
+.actions a:first-child:hover {
+    background-color: #007bff;
+    color: white;
+}
 
+/* Tombol Aksi Hapus */
+.actions a:last-child { 
+    color: #dc3545;
+    border: 1px solid #dc3545;
+}
+
+.actions a:last-child:hover {
+    background-color: #dc3545;
+    color: white;
+}

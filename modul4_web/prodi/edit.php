@@ -3,7 +3,7 @@ include '../config.php';
 include '../includes/header.php';
 
 $id = $_GET['id'];
-$data = $conn->query("SELECT * FROM prodi WHERE ID_Prodi='$id'")->fetch_assoc();
+$dataQuery = $conn->query("SELECT * FROM prodi WHERE ID_Prodi='$id'");
 $jurusan = $conn->query("SELECT * FROM jurusan");
 
 if (isset($_POST['submit'])) {

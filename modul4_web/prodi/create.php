@@ -2,7 +2,7 @@
 include '../config.php';
 include '../includes/header.php';
 
-$jurusan = $conn->query("SELECT * FROM jurusan");
+$jurusan = $koneksi->query("SELECT * FROM jurusan");
 
 if (isset($_POST['submit'])) {
     $id = $_POST['ID_Prodi'];
@@ -11,7 +11,7 @@ if (isset($_POST['submit'])) {
     $koor = $_POST['ID_Koorprodi'];
 
     $sql = "INSERT INTO prodi VALUES ('$id', '$nama', '$jur', '$koor')";
-    $conn->query($sql);
+    $koneksi->query($sql);
 
     header("Location: index.php");
 }
@@ -35,7 +35,7 @@ if (isset($_POST['submit'])) {
     </select>
 
     <label>ID Koorprodi:</label>
-    <input type="text" name="ID_Koorprodi" required>
+    <input type="text" name="ID_Koorprodi">
 
     <button type="submit" name="submit">Simpan</button>
 </form>

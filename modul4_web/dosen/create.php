@@ -1,7 +1,14 @@
-<?php include '../config.php'; ?>
+<?php 
+include '../config.php'; 
+include '../includes/header.php';
+?>
 
+
+<div class="card">
 <h2>Tambah Data Dosen</h2>
 <form action="" method="POST">
+    <div class="form-group">
+        <div class="form-group">
     <label>ID Dosen</label><br>
     <input type="text" name="ID_Dosen" required><br><br>
 
@@ -12,10 +19,13 @@
     <input type="text" name="ID_Prodi" required><br><br>
 
     <label>Beban Ajar</label><br>
-    <input type="number" name="Beban_Ajar" required><br><br>
+    <input type="text" name="Beban_Ajar" required><br><br>
 
     <button type="submit" name="submit">Simpan</button>
 </form>
+</div>
+</div>
+</div>
 
 <?php
 if (isset($_POST['submit'])) {

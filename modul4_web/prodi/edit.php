@@ -2,9 +2,22 @@
 include '../config.php';
 include '../includes/header.php';
 
+if (!isset($_GET['id'])) {
+    die("ID tidak ditemukan");
+}
+
 $id = $_GET['id'];
-$dataQuery = $conn->query("SELECT * FROM prodi WHERE ID_Prodi='$id'");
-$jurusan = $conn->query("SELECT * FROM jurusan");
+
+$dataQuery = $koneksi->query("SELECT * FROM prodi WHERE ID_Prodi='$id'");
+$jurusan = $koneksi->query("SELECT * FROM jurusan");
+
+// Kalau query gagal / data kosong
+if (!$dataQuery || $dataQuery->num_rows == 0) {
+    die("Data Prodi tidak ditemukan");
+}
+
+// FETCH DATA
+$data = $dataQuery->fetch_assoc();
 
 if (isset($_POST['submit'])) {
     $nama = $_POST['Nama_Prodi'];
@@ -19,7 +32,7 @@ if (isset($_POST['submit'])) {
         WHERE ID_Prodi='$id'
     ";
 
-    $conn->query($sql);
+    $koneksi->query($sql);
     header("Location: index.php");
 }
 ?>

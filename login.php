@@ -1,3 +1,35 @@
+<?php
+session_start();
+include 'modul4_web/config.php'; // di sini ada $koneksi
+
+$error = "";
+
+if (isset($_POST['login'])) {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    // Cek user dari database
+    $stmt = $koneksi->prepare("SELECT * FROM users WHERE username = ?");
+    $stmt->bind_param("s", $username);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        $user = $result->fetch_assoc();
+
+        if (password_verify($password, $user['password'])) {
+            // login sukses
+            $_SESSION['user'] = $user;
+            header("Location: modul4_web/index.php");
+            exit;
+        } else {
+            $error = "Password salah!";
+        }
+    } else {
+        $error = "Username tidak ditemukan!";
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -200,6 +232,10 @@
     <div class="login-container">
         <div class="column left-column">
             <h2>Sign In</h2>
+            <?php if ($error != ""): ?>
+    <p style="color:red; font-weight:bold;"><?= $error ?></p>
+<?php endif; ?>
+
             
             <div class="social-login">
                 <span class="icon" data-icon="flat-color-icons:google"></span>
@@ -210,14 +246,15 @@
             
             <p class="separator">Atau gunakan email dan password</p>
             
-            <form action="modul4_web/index.php" method="POST" class="login-form">
-                <input type="email" name="email" placeholder="Email" class="input-field" required>
-                <input type="password" name="password" placeholder="Password" class="input-field" required>
-                
-                <a href="#" class="forgot-password">Lupa password anda?</a>
-                
-                <button type="submit" class="btn sign-in-btn">SIGN IN</button>
+            <form method="POST" class="login-form">
+            <input type="text" name="username" placeholder="username" class="input-field" required>
+            <input type="password" name="password" placeholder="Password" class="input-field" required>
+
+            <a href="#" class="forgot-password">Lupa password anda?</a>
+
+            <button type="submit" name="login" class="btn sign-in-btn">SIGN IN</button>
             </form>
+
             
             <div class="logo-background"></div>
         </div>

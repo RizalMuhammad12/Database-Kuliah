@@ -17,7 +17,8 @@ if (isset($_POST['login'])) {
     if ($result->num_rows > 0) {
         $user = $result->fetch_assoc();
 
-        if (password_verify($password, $user['password'])) {
+        if ($password === $user['password']) {
+
             // login sukses
             $_SESSION['user'] = $user;
             header("Location: modul4_web/index.php");

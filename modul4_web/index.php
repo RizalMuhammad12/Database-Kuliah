@@ -7,7 +7,7 @@ include 'includes/header.php';
 
 // ambil beberapa count untuk ditampilkan
 $counts = [];
-$tables = ['mahasiswa','dosen','matakuliah','prodi'];
+$tables = ['mahasiswa','dosen','matakuliah','prodi','jurusan'];
 foreach($tables as $t){
     $res = $koneksi->query("SELECT COUNT(*) as c FROM `$t`");
     $row = $res->fetch_assoc();
@@ -15,12 +15,15 @@ foreach($tables as $t){
 }
 ?>
 <head><link rel="stylesheet" href="css/style.css"></head>
+<script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+
 <div class="card">
   <h1 style="text-align:center">POLITEKNIK NEGERI BANJARMASIN</h1>
   <img src="Logo_poliban.jpg" alt="Logo Poliban" class="logo">
 </div>
 
 <div class="dashboard-stats">
+
   <div class="stat red">
     <span class="iconify icon" data-icon="mdi:account-group"></span>
     <div>
@@ -28,6 +31,14 @@ foreach($tables as $t){
       <div>Jumlah Siswa</div>
     </div>
   </div>
+
+  <div class="stat yellow">
+    <span class="iconify icon" data-icon="mdi:domain"></span>
+    <div>
+      <div style="font-size:20px"><?=$counts['jurusan']?></div>
+      <div>Jurusan</div>
+    </div>
+  </div> <!-- DIV YANG PENTING!!! -->
 
   <div class="stat blue">
     <span class="iconify icon" data-icon="mdi:teacher"></span>
@@ -41,7 +52,7 @@ foreach($tables as $t){
     <span class="iconify icon" data-icon="mdi:domain"></span>
     <div>
       <div style="font-size:20px"><?=$counts['prodi']?></div>
-      <div>Jurusan</div>
+      <div>Prodi</div>
     </div>
   </div>
 
@@ -52,6 +63,7 @@ foreach($tables as $t){
       <div>Matakuliah</div>
     </div>
   </div>
+
 </div>
 
 

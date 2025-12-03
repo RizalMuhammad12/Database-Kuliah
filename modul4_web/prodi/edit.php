@@ -37,15 +37,18 @@ if (isset($_POST['submit'])) {
 }
 ?>
 
+<div class="card">
 <h2>Edit Prodi</h2>
-
 <form method="POST">
+    <div class="form-row">
+        <div class="form-group">
     <label>ID Prodi:</label>
     <input type="text" value="<?= $data['ID_Prodi'] ?>" disabled>
-
+</div>
+<div class="form-group">
     <label>Nama Prodi:</label>
     <input type="text" name="Nama_Prodi" value="<?= $data['Nama_Prodi'] ?>" required>
-
+</div>
     <label>Jurusan:</label>
     <select name="ID_Jurusan" required>
         <?php while ($j = $jurusan->fetch_assoc()) : ?>
@@ -62,5 +65,6 @@ if (isset($_POST['submit'])) {
 
     <button type="submit" name="submit">Update</button>
 </form>
+</div>
 
 <?php include '../includes/footer.php'; ?>

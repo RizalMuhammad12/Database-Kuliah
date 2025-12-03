@@ -17,12 +17,39 @@ $current = basename($_SERVER['PHP_SELF']);
 <body>
   <header class="topbar">
   <nav class="nav">
-    <a class="nav-brand" href="<?= $base_path ?>index.php" class="btn <?= $current == 'index' ? 'active' : '' ?>">Politeknik Negeri Banjarmasin</a>
-    <div class="nav-links">
-        <a href="<?= $base_path ?>index.php" class="btn <?= $current == 'index' ? 'active' : '' ?>">Beranda</a>
-        
-        <a href="<?= $base_path ?>Database/index.php" class="btn <?= $current == 'database' ? 'active' : '' ?>">Database</a>
-    </div>
-</nav>
-  </header>
-  <main class="container">
+
+      <!-- Tombol kembali di dalam navbar -->
+      <button class="btn-back-nav" onclick="history.back()">← Kembali</button>
+
+      <a class="nav-brand" href="<?= $base_path ?>index.php">Politeknik Negeri Banjarmasin</a>
+
+      <div class="nav-links">
+          <a href="<?= $base_path ?>index.php" class="btn <?= $current == 'index' ? 'active' : '' ?>">Beranda</a>
+          <a href="<?= $base_path ?>Database/index.php" class="btn <?= $current == 'database' ? 'active' : '' ?>">Database</a>
+      </div>
+
+  </nav>
+</header>
+
+<main class="container">
+
+<style>
+.btn-back-nav {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 6px 14px;
+    border-radius: 6px;
+    margin-right: 15px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.btn-back-nav:hover {
+    background: rgba(255, 255, 255, 0.35);
+}
+
+</style>
+<main class="container">
+

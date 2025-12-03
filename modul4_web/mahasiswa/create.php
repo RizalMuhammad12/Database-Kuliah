@@ -2,11 +2,11 @@
 // mahasiswa/create.php
 require '../config.php';
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
-    $nim = $mysqli->real_escape_string($_POST['nim']);
-    $nama = $mysqli->real_escape_string($_POST['nama']);
-    $prodi = $mysqli->real_escape_string($_POST['prodi']);
+    $nim = $koneksi->real_escape_string($_POST['nim']);
+    $nama = $koneksi->real_escape_string($_POST['nama']);
+    $prodi = $koneksi->real_escape_string($_POST['prodi']);
 
-    $stmt = $mysqli->prepare("INSERT INTO mahasiswa (NIM, Nama_Mahasiswa, ID_Prodi) VALUES (?, ?, ?)");
+    $stmt = $koneksi->prepare("INSERT INTO mahasiswa (NIM, Nama_Mahasiswa, ID_Prodi) VALUES (?, ?, ?)");
     $stmt->bind_param('sss',$nim,$nama,$prodi);
     if($stmt->execute()){
         header('Location: index.php');

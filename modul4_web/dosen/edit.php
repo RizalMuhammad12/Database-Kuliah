@@ -5,16 +5,20 @@ $ID_Dosen = $_GET['ID_Dosen'];
 $data = mysqli_query($koneksi, "SELECT * FROM dosen WHERE ID_Dosen='$ID_Dosen'");
 $row = mysqli_fetch_assoc($data);
 ?>
-
+<div class="card">
 <h2>Edit Data Dosen</h2>
 
 <form action="" method="POST">
+    <div class="form-row">
+     <div class="form-group">   
     <label>ID Dosen</label><br>
     <input type="text" value="<?= $row['ID_Dosen'] ?>" disabled><br><br>
-
+</div>
+     <div class="form-group">
     <label>Nama Dosen</label><br>
     <input type="text" name="Nama_Dosen" value="<?= $row['Nama_Dosen'] ?>" required><br><br>
-
+</div>
+    <div class="form-group">
     <label>ID Prodi</label><br>
     <input type="text" name="ID_Prodi" value="<?= $row['ID_Prodi'] ?>" required><br><br>
 
@@ -23,6 +27,7 @@ $row = mysqli_fetch_assoc($data);
 
     <button type="submit" name="submit">Update</button>
 </form>
+</div>
 
 <?php
 if (isset($_POST['submit'])) {

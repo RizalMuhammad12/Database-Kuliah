@@ -83,20 +83,23 @@ if (isset($_POST['login'])) {
         }
 
         /* Ikon Sosial */
-        .social-login {
-            margin-bottom: 20px;
-        }
+.social-login {
+    display: flex;
+    gap: 15px;              /* Jarak antar icon */
+    margin: 15px 0 25px;
+}
 
-        .social-login .icon {
-            font-size: 30px; 
-            margin: 0 8px;
-            cursor: pointer;
-            transition: transform 0.2s;
-        }
+.social-login .iconify {
+    font-size: 32px;        /* Ukuran icon */
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.2s;
+}
 
-        .social-login .icon:hover {
-            transform: scale(1.1);
-        }
+.social-login .iconify:hover {
+    transform: scale(1.15);
+    opacity: 0.8;
+}
+
 
         .separator {
             color: #666;
@@ -239,10 +242,10 @@ if (isset($_POST['login'])) {
 
             
             <div class="social-login">
-                <span class="icon" data-icon="flat-color-icons:google"></span>
-                <span class="icon" data-icon="brandico:facebook"></span>
-                <span class="icon" data-icon="brandico:linkedin"></span>
-                <span class="icon" data-icon="cib:github"></span>
+                <span class="iconify" data-icon="flat-color-icons:google"></span>
+                <span class="iconify" data-icon="logos:facebook"></span>
+                <span class="iconify" data-icon="logos:linkedin-icon"></span>
+                <span class="iconify" data-icon="cib:github"></span>
             </div>
             
             <p class="separator">Atau gunakan email dan password</p>

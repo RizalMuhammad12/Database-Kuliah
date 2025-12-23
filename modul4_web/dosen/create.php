@@ -7,6 +7,7 @@ include '../includes/header.php';
 <div class="card">
 <h2>Tambah Data Dosen</h2>
 <form action="" method="POST">
+    <div class="form-row">
     <div class="form-group">
         <div class="form-group">
     <label>ID Dosen</label><br>
@@ -21,7 +22,7 @@ include '../includes/header.php';
     <label>Beban Ajar</label><br>
     <input type="text" name="Beban_Ajar" required><br><br>
 
-    <button type="submit" name="submit">Simpan</button>
+    <button class="btn-primary" type="submit" name="submit">Simpan</button>
 </form>
 </div>
 </div>

@@ -1,5 +1,6 @@
 <?php
 include '../config.php';
+include '../includes/header.php';
 
 $ID_Dosen = $_GET['ID_Dosen'];
 $data = mysqli_query($koneksi, "SELECT * FROM dosen WHERE ID_Dosen='$ID_Dosen'");
@@ -8,7 +9,7 @@ $row = mysqli_fetch_assoc($data);
 <div class="card">
 <h2>Edit Data Dosen</h2>
 
-<form action="" method="POST">
+<form method="post">
     <div class="form-row">
      <div class="form-group">   
     <label>ID Dosen</label><br>
@@ -25,8 +26,9 @@ $row = mysqli_fetch_assoc($data);
     <label>Beban Ajar</label><br>
     <input type="number" name="Beban_Ajar" value="<?= $row['Beban_Ajar'] ?>" required><br><br>
 
-    <button type="submit" name="submit">Update</button>
+    <button class="btn-primary" type="submit" name="submit">Update</button>
 </form>
+</div>
 </div>
 
 <?php

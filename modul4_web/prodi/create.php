@@ -37,7 +37,7 @@ if (isset($_POST['submit'])) {
     <label>ID Koorprodi:</label>
     <input type="text" name="ID_Koorprodi">
 
-    <button type="submit" name="submit">Simpan</button>
+    <button class="btn-primary" type="submit" name="submit">Simpan</button>
 </form>
 
 <?php include '../includes/footer.php'; ?>

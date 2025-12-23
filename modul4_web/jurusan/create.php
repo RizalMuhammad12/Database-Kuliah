@@ -1,4 +1,5 @@
 <?php include '../config.php'; ?>
+<?php include '../includes/header.php'; ?>
 
 <h2>Tambah Jurusan</h2>
 
@@ -9,7 +10,7 @@
     <label>Nama Jurusan</label><br>
     <input type="text" name="Nama_Jurusan" required><br><br>
 
-    <button type="submit" name="submit">Simpan</button>
+    <button class="btn-primary" type="submit" name="submit">Simpan</button>
 </form>
 
 <?php

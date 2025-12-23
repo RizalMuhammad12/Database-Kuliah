@@ -1,5 +1,6 @@
 <?php
 include '../config.php';
+include '../includes/header.php';
 
 $id = $_GET['id'];
 $q = mysqli_query($koneksi, "SELECT * FROM matakuliah WHERE ID_Matkul='$id'");
@@ -15,7 +16,7 @@ $data = mysqli_fetch_assoc($q);
     <label>Nama Matkul</label><br>
     <input type="text" name="Nama_Matkul" value="<?= $data['Nama_Matkul'] ?>" required><br><br>
 
-    <button type="submit" name="submit">Update</button>
+    <button class="btn-primary" type="submit" name="submit">Update</button>
 </form>
 
 <?php

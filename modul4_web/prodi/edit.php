@@ -61,9 +61,9 @@ if (isset($_POST['submit'])) {
     </select>
 
     <label>ID Koorprodi:</label>
-    <input type="text" name="ID_Koorprodi" value="<?= $data['ID_Koorprodi'] ?>" required>
+    <input type="text" name="ID_Koorprodi" value="<?= $data['ID_Koorprodi'] ?>">
 
-    <button type="submit" name="submit">Update</button>
+    <button class="btn-primary" type="submit" name="submit">Update</button>
 </form>
 </div>
 
